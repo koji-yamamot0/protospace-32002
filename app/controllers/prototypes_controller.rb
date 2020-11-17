@@ -34,8 +34,8 @@ class PrototypesController < ApplicationController
 
   def update
     authenticate_user!
-    prototype = Prototype.find(params[:id])
-    if prototype.update(prototype_params)
+    @prototype = Prototype.find(params[:id])
+    if @prototype.update(prototype_params)
       redirect_to prototype_path
     else
       render :edit
