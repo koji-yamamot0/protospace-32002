@@ -1,5 +1,5 @@
 
-## user テーブル
+## users テーブル
 
 | Column     | Type   | Options     |
 | ---------- | ------ | ----------- |
@@ -11,8 +11,8 @@
 | position   | text   | null: false |
 
 ### Association
-- belongs_to :prototype
-- belongs_to :comment
+- has_many :prototypes
+- has_many :comments
 
 ## prototypes テーブル
 
@@ -24,8 +24,8 @@
 | user       | references |             |
 
 ### Association
-- has_many   :users
-- belongs_to :comment
+- belongs_to :user
+- has_many   :comments
 
 ## comments テーブル
 
@@ -36,5 +36,5 @@
 | prototype | references |             |
 
 ### Association
-- has_many :users
-- has_many :prototypes
+- belongs_to :user
+- belongs_to :prototype
