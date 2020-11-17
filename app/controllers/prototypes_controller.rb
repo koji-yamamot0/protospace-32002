@@ -35,6 +35,9 @@ class PrototypesController < ApplicationController
     end
   end
 
+  def destroy
+  end
+
   private
   def prototype_params
     params.require(:prototype).permit(:title, :catch_copy, :concept, :image).merge(user_id: current_user.id)
